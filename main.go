@@ -6,6 +6,7 @@ import (
 
 	"github.com/harsh082ip/todolist-CLI-golang/cmd"
 	// "github.com/spf13/cobra"
+	// "github.com/harsh082ip/todolist-CLI-golang/internal/db"
 )
 
 func main() {
@@ -20,5 +21,5 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
+	// db.DbConnection()
 }

@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/harsh082ip/todolist-CLI-golang/internal/db"
 	"github.com/spf13/cobra"
 )
 
@@ -15,13 +16,14 @@ var AddTodo = &cobra.Command{
 func AddTodos(cmd *cobra.Command, args []string) {
 	title, _ := cmd.Flags().GetString("title")
 	desc, _ := cmd.Flags().GetString("desc")
-	if desc != "" {
-		fmt.Println("You have Successfully Added a Todooo")
-		fmt.Printf("%v --- %v \n", title, desc)
+
+	res, err := db.CreateTodo(title, desc)
+	if err != nil {
+		fmt.Println(err)
 		return
 	}
-	fmt.Println("You have Successfully Added a Todo")
-	fmt.Printf("%v \n", title)
+	fmt.Println(res)
+
 }
 
 func init() {
