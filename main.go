@@ -11,6 +11,9 @@ import (
 func main() {
 
 	cmd.RootCmd.AddCommand(cmd.ListTodo)
+	cmd.RootCmd.AddCommand(cmd.AddTodo)
+	cmd.RootCmd.AddCommand(cmd.UpdateTodo)
+	cmd.RootCmd.AddCommand(cmd.DeleteTodo)
 	// cmd.Root2.AddCommand(cmd.RootCmd)
 
 	if err := cmd.RootCmd.Execute(); err != nil {
