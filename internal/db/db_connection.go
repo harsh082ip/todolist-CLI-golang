@@ -23,11 +23,19 @@ func DbConnection() (*mongo.Client, error) {
 		fmt.Println(err)
 		return nil, err
 	}
-	// fmt.Println(time.Now())
-	// currentTime := time.Now()
-	// fmt.Println("Current Date and Time:", currentTime)
 
-	// // You can also format the output as needed
-	// fmt.Println("Formatted Date and Time:", currentTime.Format("2006-01-02 15:04:05"))
+	// Use defer to ensure Disconnect is called before returning
+	// defer func() {
+	// 	if err := client.Disconnect(context.TODO()); err != nil {
+	// 		fmt.Println("Error disconnecting from MongoDB:", err)
+	// 	}
+	// }()
 	return client, nil
 }
+
+// fmt.Println(time.Now())
+// currentTime := time.Now()
+// fmt.Println("Current Date and Time:", currentTime)
+
+// // You can also format the output as needed
+// fmt.Println("Formatted Date and Time:", currentTime.Format("2006-01-02 15:04:05"))
