@@ -21,6 +21,7 @@ func CreateTodo(title string, desc string) (string, error) {
 		Title:       title,
 		Description: desc,
 		Time:        time.Now().Format("2006-01-02 15:04:05"),
+		IsCompleted: false,
 	}
 
 	coll := client.Database("Todos-App").Collection("todos")

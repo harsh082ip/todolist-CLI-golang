@@ -9,4 +9,5 @@ type TodoModel struct {
 	Title       string             `bson:"title,omitempty"`
 	Description string             `bson:"desc,omitempty"`
 	Time        string             `bson:"time,omitempty"`
+	IsCompleted bool               `bson:"iscompleted"`
 }

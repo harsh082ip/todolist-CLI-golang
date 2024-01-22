@@ -15,6 +15,9 @@ func main() {
 	cmd.RootCmd.AddCommand(cmd.AddTodo)
 	cmd.RootCmd.AddCommand(cmd.UpdateTodo)
 	cmd.RootCmd.AddCommand(cmd.DeleteTodo)
+	cmd.DeleteTodo.AddCommand(cmd.AllTodoDel)
+	cmd.DeleteTodo.AddCommand(cmd.CompTodoDel)
+	cmd.DeleteTodo.AddCommand(cmd.InCompTodoDel)
 	// cmd.Root2.AddCommand(cmd.RootCmd)
 
 	if err := cmd.RootCmd.Execute(); err != nil {
