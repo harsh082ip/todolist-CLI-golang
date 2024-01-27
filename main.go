@@ -24,6 +24,8 @@ func main() {
 	cmd.ListTodo.AddCommand(cmd.ListIncompTodos)
 	// cmd.Root2.AddCommand(cmd.RootCmd)
 
+	cmd.UpdateTodo.AddCommand(cmd.UpdateCompletedTodos)
+	cmd.UpdateTodo.AddCommand(cmd.UpdateIncompletedTodos)
 	if err := cmd.RootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

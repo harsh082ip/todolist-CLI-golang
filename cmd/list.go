@@ -58,7 +58,7 @@ func ListTodos(cmd *cobra.Command, args []string) {
 		if res.IsCompleted {
 			status = "Completed"
 		}
-		fmt.Printf("Id: %v, \n Title: %v, \n Desc: %v \n, Time Created: %v \n Status: %v \n", res.Id, res.Time, res.Description, res.Time, status)
+		fmt.Printf("Id: %v, \n Title: %v, \n Desc: %v \n, Time Created: %v \n Status: %v \n", res.Id, res.Title, res.Description, res.Time, status)
 		return
 	}
 
