@@ -30,5 +30,5 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	// db.DbConnection()
+	
 }
